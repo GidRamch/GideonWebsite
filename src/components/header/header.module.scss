@@ -1,0 +1,64 @@
+body { margin:0; }
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap');
+
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 1px #dddddd;
+}
+
+.container-contrast {
+  @extend .container;
+  border-bottom: unset;
+}
+
+
+.flex-container {
+  min-width: 400px;
+  width: 1600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding-left: 36px ;
+  padding-right: 36px ;
+}
+
+.page-title {
+  height: 100%;
+  font-family: Reem Kufi;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  color:#FF4A11;
+  line-height: 2;
+  cursor: pointer;
+  text-decoration: none;
+
+
+  &:hover {
+    transition: all .4s ease-out;
+    color: #ff4911a6;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 24px;
+    line-height: 2.75;
+  }
+}
+
+
+.page-title-contrast {
+  @extend .page-title;
+
+  color:#ffffff ;
+
+  &:hover {
+    transition: all .4s ease-out;
+    color:#ff9373;
+  }
+}

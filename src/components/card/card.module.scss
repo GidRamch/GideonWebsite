@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+
+$timing-function: ease-out;
+$animaton-duration: 250ms;
+$border-radius: 12px;
+
+
+.overlay {
+  position: absolute; 
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: $border-radius;
+  transition: all ($animaton-duration * 2) + 100ms $timing-function;
+  opacity: 0;
+  transform: translateY(50%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.27) 50%, rgba(0, 0, 0, 0.01) 75%, rgba(0,0,0,0) 100%);
+}
+
+.card-parent {
+  height: 180px;
+  width: 100%;
+  overflow-y: hidden;
+
+
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: $border-radius;
+  transition: all $animaton-duration $timing-function;
+
+  // background-image:linear-gradient(116.7deg, rgba(71, 0, 0, 0.137) 0%, rgba(65, 0, 0, 0.384) 100%), url('../../assets/fisher-336482_640.jpg');
+  background-size: 150%;
+  background-position: center;
+
+  &:hover {
+    background-size: 175%;
+  }
+}
+
+
+.card {
+  position: relative;
+  font-family: 'Yantramanav', sans-serif;
+  border-radius: $border-radius;
+
+  height: 100%;
+  width: 100%;
+
+  &:hover {
+    .overlay {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+
+  .card-content {
+    padding: 24px 0 24px 24px;
+    transform: translateY(112px);
+    transition: all $animaton-duration $timing-function;
+    height: 48px;
+    overflow-y: hidden;
+  }
+
+  .card-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .card-subtitle {
+    margin-top: 8px;
+    font-size: 20px;
+    font-weight: lighter;
+    transform: translateY(48px);
+    color: rgb(230, 230, 230);
+    opacity: 0;
+    transition: all $animaton-duration + 100ms $timing-function;
+  }
+
+  .card-buttons {
+    opacity: 0;
+    transform: translateY(64px);
+    transition: all $animaton-duration + 150ms $timing-function;
+    margin-top: 32px;
+    display: flex;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(107.3deg, rgba(255, 74, 17, 0.55) 8.71%, rgba(254, 0, 30, 0.429) 86.02%);
+      height: 36px;
+      border-radius: $border-radius;
+      padding: 0 8px;
+      color: white;
+      font-size: 16px;
+      font-weight: lighter;
+      margin-right: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background: linear-gradient(107.3deg, rgba(182, 53, 13, 0.55) 8.71%, rgba(187, 2, 23, 0.429) 86.02%);
+      }
+    }
+  }
+
+
+  &:hover {
+    .card-content {
+      height: unset;
+      transform: translateY(0px);
+    }
+
+    .card-subtitle {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-buttons {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+.no-style {
+  text-decoration: none;
+}
