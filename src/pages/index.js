@@ -2,6 +2,7 @@ import React from "react"
 import NavbarLayout from "../layouts/navbar-layout/navbar-layout";
 import indexStyles from './index.module.scss';
 import { graphql, useStaticQuery } from 'gatsby';
+import Head from "../components/head/head";
 
 
 export default function Home() {
@@ -39,6 +40,7 @@ export default function Home() {
 
   return (
     <div className={indexStyles.pageContainer}>
+      <Head title="About"/>
       <video loop autoPlay className={indexStyles.videoPlayer} muted poster={assets.bgPhoto.edges[0].node.fluid.base64}>
         <source
           src={assets.bgVideo.edges[0].node.file.url}

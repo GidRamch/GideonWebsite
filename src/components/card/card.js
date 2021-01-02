@@ -11,7 +11,8 @@ const Card = (props) => {
 
   return (
     <div className={cardStyles.cardParent} 
-    style={{backgroundImage: `linear-gradient(116.7deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.15) 100%), url(${props.image})`,}}
+      style={{backgroundImage: `linear-gradient(116.7deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.15) 100%), url(${props.image})`,}}
+      key={props.title}
     >
       <div className={cardStyles.card}>
         <div className={cardStyles.overlay}></div>
