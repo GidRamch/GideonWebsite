@@ -15,7 +15,7 @@ const Sidenav = (props) => {
 
   return (
     <nav className={classes.join(' ')}>
-      <Link className={sidenavStyles.link} to="/">About</Link>
+      <Link className={sidenavStyles.link} to="/">Home</Link>
       <Link className={sidenavStyles.link} to="/projects/projects">Projects</Link>
       <Link className={sidenavStyles.link} to="/blog/blog">Blog</Link>
       <div className={sidenavStyles.iconLinks}>

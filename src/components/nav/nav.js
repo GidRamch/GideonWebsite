@@ -17,7 +17,7 @@ const Nav = (props) => {
   return (
     <div>
       <div className={navStyle.container}>
-        <Link className={linkStyle} to="/">About</Link>
+        <Link className={linkStyle} to="/">Home</Link>
         <Link className={linkStyle} to="/projects/projects">Projects</Link>
         <Link className={linkStyle} to="/blog/blog">Blog</Link>
         <a href="https://github.com/GidSchwifty" target="_blank" className={navStyle.noPadLink}><img src={props.contrast ? githubWhite : github} height="24px" className={navStyle.iconLink} ></img></a>
