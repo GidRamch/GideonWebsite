@@ -1,6 +1,6 @@
 .container {
   transition: all .4s ease-out;
-  display: flex;
+  display: none;
   align-items: center;
 
   &:hover {
@@ -38,6 +38,13 @@
         opacity: 1;
       }
     }
+  }
+}
+
+
+@media (min-width: 768px) {
+  .container {
+    display: flex;
   }
 }
 
