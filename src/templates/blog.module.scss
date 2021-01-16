@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 .container {
   display: flex;
   flex-direction: column;
@@ -7,7 +9,7 @@
 
 .content {
   width: 100%;
-  max-width: 1200px;
+  max-width: 680px;
   margin-top: 60px;
 }
 
@@ -20,15 +22,16 @@
   font-style: normal;
 }
 
-.card-container {
-  margin: 32px 12px 0;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.date {
+  margin: 8px 12px;
+  color: #aaaaaa;
 }
 
-
-.no-style-link {
-  text-decoration: none;
-  color:unset;
+.card-container {
+  margin: 32px 12px 0;
+  font-family: 'PT Serif', serif;
+  font-size: 20px;
+  letter-spacing: 0.7px;
+  line-height: 33px;
+  font-smooth: always;
 }
