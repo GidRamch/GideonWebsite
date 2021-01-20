@@ -1,20 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import NavbarLayout from '../layouts/navbar-layout/navbar-layout';
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-
+import { BLOCKS } from "@contentful/rich-text-types"
+import { Disqus } from 'gatsby-plugin-disqus';
 import blogStyles from './blog.module.scss';
-
 import Head from "../components/head/head";
-// import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-
 import { renderRichText } from "gatsby-source-contentful/rich-text"
-
-// const Bold = ({ children }) => <span className="bold">{children}</span>
 
 const options = {
   renderNode: {
-  //   [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
     [BLOCKS.EMBEDDED_ASSET]: (node) => {
       console.log(node);
 
@@ -30,20 +24,6 @@ const options = {
     },
   },
 }
-
-// const options = {
-//   renderNode: {
-//     "embedded-asset-block": (node) => {
-
-//       console.log(node);
-
-//       const alt = node?.data?.target?.fields?.title['en-US']
-//       const src = node?.data?.target?.fields?.file['en-US']?.url
-
-//       return <img alt={alt} src={src} width="100%" />
-//     }
-//   }
-// };
 
 
 export const pageQuery = graphql`
@@ -71,6 +51,13 @@ export const pageQuery = graphql`
 const Blog = (props) => {
 
 
+  const discusConfig = {
+    url: `https://distracted-hoover-350ab2.netlify.app${props.uri}`,
+    identifier: props.data.contentfulBlogPost.title,
+    title: props.data.contentfulBlogPost.title,
+  };
+
+
   console.log(props);
 
   const title = `${props.data.contentfulBlogPost.title}`
@@ -87,9 +74,14 @@ const Blog = (props) => {
             {props.data.contentfulBlogPost.publishedDate}
           </div>
           <div className={blogStyles.cardContainer}>
-            {/* {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)} */}
             {props.data.contentfulBlogPost.body && renderRichText(props.data.contentfulBlogPost.body, options)}
           </div>
+          <Disqus
+            className={blogStyles.comments}
+            config={
+              discusConfig
+            }
+        />
         </div>
       </div>
     </NavbarLayout>
