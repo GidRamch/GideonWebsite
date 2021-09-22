@@ -20,7 +20,7 @@ const Nav = (props) => {
         <Link className={linkStyle} to="/">Home</Link>
         <Link className={linkStyle} to="/projects/projects">Projects</Link>
         <Link className={linkStyle} to="/blog/blog">Blog</Link>
-        <a href="https://github.com/GidSchwifty" target="_blank" className={navStyle.noPadLink}><img src={props.contrast ? githubWhite : github} height="24px" className={navStyle.iconLink} ></img></a>
+        <a href="https://github.com/GidRamch" target="_blank" className={navStyle.noPadLink}><img src={props.contrast ? githubWhite : github} height="24px" className={navStyle.iconLink} ></img></a>
         <a href="https://www.linkedin.com/in/gideon-ramcharan/" target="_blank" className={navStyle.noPadLink}><img src={props.contrast ? linkdinWhite : linkdin} height="24px" className={navStyle.iconLink}></img></a>
       </div>
     </div>
